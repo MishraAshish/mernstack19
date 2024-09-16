@@ -23,7 +23,8 @@ subsequent times we need to run - git pull
 
 if you have changes in your machine - so either you resolve that or use git reset --hard and then take git pull
 
-git clean -fd git pull
+git clean -fd 
+git pull
 
 
 we need to use "npm init" to initialize npm package manager for our repository
