@@ -19,6 +19,8 @@ var i = 1000; // var keyword is used to initialize the variables in js
 //REPL - Read, Evaluate, Print and Loop
 //stop execution - ctrl + c
 
+console.log(sum(6, 10)) //error, 16(calls the function before declaration), - hoisting
+
 function sum(a,b) {
     //console.log(this)
     return a + b
