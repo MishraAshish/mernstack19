@@ -85,3 +85,6 @@ console.log(objD)
 
 var result = A(5)(5)(5)(5)
 console.log(result)
+
+
+//give me an example of each type of function
