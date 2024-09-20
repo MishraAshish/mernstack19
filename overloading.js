@@ -27,7 +27,8 @@ function Sum(a,b,c) {
     console.log("Sum of a, b and c", a+b+c)
 }
 
-Sum(1,2,3) //6
+//console.log(Sum)
+Sum(1,2,3,4) //6 //NaN, 10, function is not defined, 
 
 var Sum = function (a,b,c, d) {
     console.log("Sum of a, b and c, d", a+b+c+d)
