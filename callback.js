@@ -26,8 +26,14 @@ var productObj = {
     Avaialble : "Yes"
 }
 
-function GetProductDtails(callBackFunc, data) {
-    callBackFunc("The product details you are looking for are as : ", data);
+function GetProductDtails(abc, data) {
+    abc("The product details you are looking for are as : ", data);
 }
 
-GetProductDtails(PrintDetails, productObj)
+GetProductDtails(PrintDetails, productObj) //using the callback PrintDetails to print product data
+
+//Question :
+//1. create a callback function example for account
+//2. PrintAccount details should accept this call back and the account information
+//3. Upon executing PrintAccntDetails it should show the account details with a message
+//4. Use the same call back to print multiple sessions planned for the day
