@@ -99,6 +99,9 @@ Address2.Delivery = ""; // this change should not reflect in delivery details <D
 
 console.log(DispatchItem)
 
+DispatchItem = Object.assign(User, Address, Address2)
+console.log(DispatchItem) // it shows the empty delivery address for next rider
+
 // Questions -
 // Create a Person <few properties and a function to return them> and Inherit it as Student class and override the function
 // Inherit should be done both way's constructor and Object.Create
