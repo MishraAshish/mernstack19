@@ -77,8 +77,8 @@ var nullObj = Object.create(null)
 //6. Merging of different object
 
 var User = { name : "Robin", ID : "1234", userType : "Paid" }
-var Address = {ID : "1234", Current : "Somewhere on earth"}
-var Address2 = {ID : "1234", Delivery : "Somewhere in colorado"}
+var Address = {ID : "4567", Current : "Somewhere on earth"}
+var Address2 = {ID : "6789", Delivery : "Somewhere in colorado"}
 
 //var DispatchItem = { User, Address, Address2 }
 
@@ -86,7 +86,7 @@ var Address2 = {ID : "1234", Delivery : "Somewhere in colorado"}
 
 //console.log(DispatchItem) //this will reflect the changed value even after merge
 
-//We need to have principle of immutability so that changed value doesn't reflect and data gets merged avoiding 
+//We need to have principle of preservation of immutability so that changed value doesn't reflect and data gets merged avoiding 
 // redundancy
 var DispatchItem;
 
@@ -94,6 +94,7 @@ Address2.Mobile = 2151451255
 
 DispatchItem = Object.assign(User, Address, Address2)
 
+Address2.Delivery = ""; // this change should not reflect in delivery details <DispatchItem>
 //Address2.Mobile = 2151451255
 
 console.log(DispatchItem)
