@@ -98,4 +98,9 @@ DispatchItem = Object.assign(User, Address, Address2)
 
 console.log(DispatchItem)
 
-//Create a Person and Inherit it as Student class
+// Questions -
+// Create a Person <few properties and a function to return them> and Inherit it as Student class and override the function
+// Inherit should be done both way's constructor and Object.Create
+// Create three objects and merge their propeties
+// Create a logical example of closure
+// Share few data objects from one file to another
