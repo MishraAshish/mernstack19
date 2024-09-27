@@ -42,3 +42,14 @@ console.log(sumValue) //
 sumValue = "This was initialized as number but now is a string";
 
 console.log(sumValue) //
+
+
+// Recap -
+// Objects, Inheritance, Assign, Create
+// Functions, overloading, 
+// Closures
+// Literals
+// CallBack-Nesting
+// Hoisting
+// Datatypes
+// Modules
