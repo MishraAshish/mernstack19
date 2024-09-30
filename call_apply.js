@@ -62,3 +62,17 @@ PrintSessionInfo.apply(null, sessionListOct) //it sets the context to null
 
 //Create two examples to set the context using student and list of subject attended by students, 
 //it should use call and apply do describe both the cases
+
+
+
+var index = 0
+
+for (index = 0; index < 5; index++) {   
+    //setTimeout executes the call back function passed as first parameter 
+    //after the milliseconds passed as second param - for one time only 
+    setTimeout(function(){
+        console.log(index)
+    }, 2000);
+}
+
+console.log(index)
