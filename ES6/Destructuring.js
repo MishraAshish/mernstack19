@@ -62,7 +62,7 @@ let Assessment = {
 
 // e.g. - Reading marks from nested Marks object
 
-let {Name, Marks : {Java, Mernstack, DSA = 9.5 }} = Assessment
+let {Name, Marks : {Java, Mernstack, DSA = 9.5 }, Aspiration = "Technical Architect"} = Assessment
 
 console.log(Name)
 console.log(Mernstack)
