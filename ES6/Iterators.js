@@ -56,12 +56,17 @@ let eachSavdPersonCount = personsList.reduce((prevObject, currObject, index, lis
         //console.log(list)    
         prevObject[currObject.savedby] = prevObject[currObject.savedby] ? prevObject[currObject.savedby] + 1 : 1    
         return prevObject
-},new Set())
+}, new Set())//{});//[]);//new Set()) //prevObject : is initialized here as new Set()
 
 console.log(eachSavdPersonCount)
 //console.log(personsList)
 
+// count = {
+//     "IronMan" : 1
+// }
+//count.IronMan = 1
 
+//count["IronMan"] = 1 // [] is a dynamic operator to assign key and associated value on the fly and get converted to expected data structure
 
 //Question :
 ///////////////////////////
