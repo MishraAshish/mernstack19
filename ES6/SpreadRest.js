@@ -44,8 +44,8 @@ let addMax = function(...restNumberList) { //rest : param can accept any number 
     let sum = 0
 
     sum = restNumberList.reduce((prevNum, currNum)=>{
-        return prevNum + currNum
-    },0)
+        return prevNum + currNum //this we will get in prevNum
+    },0) // 0 - is initialized as prevNum
 
     return sum;
 } 
