@@ -29,7 +29,7 @@ import *  as constants from "./constant";
 let constant = 2024.2
 export default constant;
 
-//name exports - this can be many from one file
+//named exports - this can be many from one file
 export let pie = "3.141";
 export let printUser = (user)=>console.log(user);
 
