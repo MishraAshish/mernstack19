@@ -39,3 +39,5 @@
 
 
 //Percentange perfornmace better => 50%
+
+global.connectionString = "localhost:27011"
