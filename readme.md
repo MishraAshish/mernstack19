@@ -45,4 +45,7 @@ important : npm i -command is used to install all dependencies mentioned in pack
 
 http://localhost:9000/getproducts - a get api
 
-npm init - to initialize the project npm install or npm i - to install module dependency npm uninstall or npm u - to uninstall module dependency npm install -DEV or npm i -DEV -> to install module dependency
+npm init - to initialize the project 
+npm install or npm i - to install module dependency 
+npm uninstall or npm u - to uninstall module dependency 
+npm install -D or npm i -D  <package name>   -> to install module dependency
