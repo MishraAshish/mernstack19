@@ -75,3 +75,5 @@ app.get('*', function (req, res) {
 
 console.log('API is listening at port 3000')
 app.listen(3000)
+
+//create an api to read data via query parameter and save that information to a file on the server
