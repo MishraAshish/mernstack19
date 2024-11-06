@@ -4,8 +4,8 @@
   "description": "api's built using express",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "auto": "nodemon server.js",
+    "start": "nodemon server.js",
+    "auto": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
