@@ -33,3 +33,22 @@
 // Hosting the front end
 // We can host via express, webpack is better solution as it can do all other above tasks like
 // transpilation, bundling, minification, compression, split etc... along with giving host from node
+
+// "devDependencies": {
+//     "@babel/core": "^7.23.6",
+//     "@babel/preset-env": "^7.23.6", //converting es6 to core js 
+//     "@babel/preset-react": "^7.23.3", //converting react syntax to core js 
+//     "babel-loader": "^9.1.3", //helper library to convert the css into js  bundle
+//     "css-loader": "^6.8.1",
+//     "html-webpack-plugin": "^5.5.4", //helps to launch our html page while serving the request
+//     "style-loader": "^3.3.3",
+//     "webpack": "^5.89.0", //bundling, task runner, loader, configuration runner, bower runner
+//     "webpack-cli": "^5.1.4", // to run web pack command like - serve, build etc
+//     "webpack-dev-server": "^4.15.1" // front end application host
+//   },
+
+//npm i -D @babel/core @babel/preset-env @babel/preset-react html-webpack-plugin style-loader webpack-cli webpack-dev-server
+
+
+//copy the package.json 
+//run npm i 
