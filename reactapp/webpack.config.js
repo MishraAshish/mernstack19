@@ -22,19 +22,19 @@ config = {
         rules: [
             {
                 test: /\.(js|jsx)$/,
-                exclude: /nodeModules/,
+                exclude: /node_modules/,
                 use: {
                   loader: 'babel-loader'
                 }
             },
             {
                 test: /\.css$/,
-                exclude: /nodeModules/,
+                exclude: /node_modules/,
                 use: ['style-loader', 'css-loader']
             },
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                exclude: /nodeModules/,
+                exclude: /node_modules/,
                 type: 'asset/resource',
             }
         ]
