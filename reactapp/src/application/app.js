@@ -1,12 +1,10 @@
 import React from "react";
 
 export default class Application extends React.Component {
-
-
     render(){
         let myname = "Windiee - JSX => Javascript Like XML Structure"
-        let nameList = ["Nilay", "Gesan", "Jimmy", "Ben Ma", "Jay"]
-        let nameListWorking = ["Windie", "Stacy", "Duncan"]
+        let nameList = ["Nilay", "Gesan", "Jimmy", "Ben Ma", "Jay", "Everyone else"]
+        let nameListWorking = []
         return(
         <>
             <h2>This is my first react page from application Component</h2>
