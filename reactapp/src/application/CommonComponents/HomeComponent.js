@@ -1,0 +1,1 @@
+//create a home component and display information about use here //at least 5 and use it in app,js

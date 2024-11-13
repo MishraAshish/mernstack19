@@ -1,18 +1,24 @@
 import React from "react";
+import Footer from "./CommonComponents/FooterComponent";
+import Header from "./CommonComponents/HeaderComponent";
 
 export default class Application extends React.Component {
     constructor(props){
         super(props);
 
         this.state = {
-            userName : "Duncan"
+            userName : "Duncan",
+            user : {
+                address : "Somewhere on earth",
+                session : "Somehwere on webex"
+            }
         }
     }
 
     onclick = (evt)=>{
         console.log("Name change click is clicked")
         this.setState({
-            userName : "Sierra"
+            userName : "Sierra"            
         })
 
         evt.preventDefault();
@@ -20,19 +26,21 @@ export default class Application extends React.Component {
 
     //render - method is responsible to create virtual dom for every change of state or props
     render(){
-        let myname = "Windiee - JSX => Javascript Like XML Structure"
-        let nameList = ["Nilay", "Gesan", "Jimmy", "Ben Ma", "Jay", "Everyone else"]
+        let myname = "Windie"
+        let nameList = ["Nilay", "Gesan", "Jimmy", "Ben Ma", "Jay", "And Everyone else"]
         let nameListWorking = []
         return(
         <>
-            <h2>This is my first react page from application Component</h2>
-            <h2>This is my first react page with data {myname}</h2>
-            <h3>Done</h3>
+            <Header myname={myname}/>
+            
             {nameList && nameList.map((name)=>{
-                return <b><hr/>{name}</b>})}
+                return <Footer id={name} name={name} user={this.state.user}>
+                    {/* <h2>Footer Component - H2</h2>
+                    <h3>Footer Component - H3</h3> */}
+                </Footer>})}
             
             <h3>Still Working</h3>
-            {nameListWorking && nameListWorking.map((name)=>{
+            {nameListWorking && nameListWorking.map((name)=>{ //nameListWorking && => checks if variable is not null and undefined
                 return <b><hr/>{name}</b>})}
             <hr/>
             <h2>{this.state.userName}</h2>
