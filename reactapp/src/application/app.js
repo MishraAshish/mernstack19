@@ -3,9 +3,10 @@ import Footer from "./CommonComponents/FooterComponent";
 import Header from "./CommonComponents/HeaderComponent";
 
 export default class Application extends React.Component {
-    constructor(props){
-        super(props);
+    constructor(props) {
+        super(props); //is used to passback data <props -here> so that its udpated in base object for react framework
 
+        //state - object is used to allow udpdation of values via react rendering life cycle
         this.state = {
             userName : "Duncan",
             user : {
@@ -17,15 +18,21 @@ export default class Application extends React.Component {
 
     onclick = (evt)=>{
         console.log("Name change click is clicked")
+        
+        //this.state.userName = "Christopher"
+
+        //
         this.setState({
-            userName : "Sierra"            
+            userName : "Sierra"
         })
 
+        console.log("After setstate called", this.state.userName)
         evt.preventDefault();
     }
 
     //render - method is responsible to create virtual dom for every change of state or props
     render(){
+        console.log("Render is called!! ", this.state.userName)
         let myname = "Windie"
         let nameList = ["Nilay", "Gesan", "Jimmy", "Ben Ma", "Jay", "And Everyone else"]
         let nameListWorking = []
