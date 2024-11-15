@@ -50,7 +50,7 @@ export default class Application extends React.Component {
             {nameListWorking && nameListWorking.map((name)=>{ //nameListWorking && => checks if variable is not null and undefined
                 return <b><hr/>{name}</b>})}
             <hr/>
-            <h2>{this.state.userName}</h2>
+            <h2 name="h2_element">{this.state.userName}</h2>
             <button onClick={this.onclick}> Change Name</button>
         </>)
     }
