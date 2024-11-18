@@ -530,7 +530,7 @@ i[class*=" icon-"]:before {
 }
 [aria-current] {
   border: 1px solid red!important;
-  background-color: rgb(201, 64, 171)!important;
+  background-color: rgb(201, 80, 64)!important;
 }
 .label, [data-tooltip]:after, button,
 .button,

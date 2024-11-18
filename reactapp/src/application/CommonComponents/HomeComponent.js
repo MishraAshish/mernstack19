@@ -8,3 +8,18 @@
 //try updating the data on a upate button click and see if it also shows on frriends name component
 
 //create a home component and display information about use here //at least 5 and use it in app,js
+
+import React from "react";
+
+export default class Home extends React.Component {
+
+
+    render()
+    {
+        return(
+            <>
+                <h1>Home Component</h1>
+            </>
+        )
+    }
+}

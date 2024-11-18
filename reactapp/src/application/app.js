@@ -1,7 +1,12 @@
 import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./app.css";
 import Footer from "./CommonComponents/FooterComponent";
 import Header from "./CommonComponents/HeaderComponent";
+import { AppCopy } from "./CommonComponents/AppCopy";
+import Home from "./CommonComponents/HomeComponent";
+import About from "./CommonComponents/AboutComponent";
+import NotFound from "./CommonComponents/NotFoundComponent";
 
 export default class Application extends React.Component {
     constructor(props) {
@@ -17,42 +22,21 @@ export default class Application extends React.Component {
         }
     }
 
-    onclick = (evt)=>{
-        console.log("Name change click is clicked")
-        
-        //this.state.userName = "Christopher"
-
-        //
-        this.setState({
-            userName : "Sierra"
-        })
-
-        console.log("After setstate called", this.state.userName)
-        evt.preventDefault();
-    }
-
     //render - method is responsible to create virtual dom for every change of state or props
     render(){
         console.log("Render is called!! ", this.state.userName)
-        let myname = "Windie"
-        let nameList = ["Nilay", "Gesan", "Jimmy", "Ben Ma", "Jay", "And Everyone else"]
-        let nameListWorking = []
         return(
-        <>
-            <Header myname={myname}/>
-            
-            {nameList && nameList.map((name)=>{
-                return <Footer id={name} name={name} user={this.state.user}>
-                    {/* <h2>Footer Component - H2</h2>
-                    <h3>Footer Component - H3</h3> */}
-                </Footer>})}
-            
-            <h3>Still Working</h3>
-            {nameListWorking && nameListWorking.map((name)=>{ //nameListWorking && => checks if variable is not null and undefined
-                return <b><hr/>{name}</b>})}
-            <hr/>
-            <h2 name="h2_element">{this.state.userName}</h2>
-            <button onClick={this.onclick}> Change Name</button>
-        </>)
+        <Router>
+            <Header/>
+            <Routes>
+                <Route path="/" element={<Home />}/>
+                <Route path="home" element={<Home />}/>
+                <Route path="app" element={<AppCopy />} />
+                <Route path="about" element={<About />} />
+                <Route path="about/:id" element={<About />} />
+                <Route path="*" element={<NotFound />}/>
+            </Routes>
+            <Footer/>
+        </Router>)
     }
 }
