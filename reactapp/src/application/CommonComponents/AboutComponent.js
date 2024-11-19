@@ -1,30 +1,29 @@
-import React from "react";
+import React, { useState } from "react"; // { useState } - named import and can be imported many named ones
 import { useParams, useNavigate } from "react-router-dom";
 
 //a functional component using arrow function
-let About = ()=>{
+let About = (props)=>{
     let params = useParams(); 
     let param = params && params["id"] ? params["id"]: "No Params"; 
     
-    // //this.state = {userName : "Joe Si!"}
-    // //this.setState({userName : "Suyash"})
+    //this.state = {userName : "Nilay!"}
+    //this.setState({userName : "BenMa"})
 
-    // //using functional hook - useState is replacement of setState and state
-    // let [userName, setUserName] = useState("Joe Si!") 
+    //using functional hook - useState is replacement of setState and state
+    let [userName, setUserName] = useState("Yao!") 
     // let [userAge, setUserAge] = useState(20)
-    // // let [user, setUser] = useState({userName :"Joe Si!", userAge : 19}) //in case to update the object
+    //let [user, setUser] = useState({userName :"Yao!", userAge : 19}) //in case to update the object
 
+    //first hook that we are using in application
+    let goToHome = useNavigate(); //helps to create route table on the fly and intercepted by BrowserRouter
 
-    // //first hook that we are using in application
-    // let goToHome = useNavigate(); //helps to create route table on the fly and intercepted by BrowserRouter
-
-    // let onGoToHomeClick = (evt)=>{
-    //     //goToHome("/home");
+    let onGoToHomeClick = (evt)=>{
+        //goToHome("/Login");
         
-    //     setUserName("Suyash!!")
+        setUserName("Silvia!!") //this will update the userName and re-render the about component
 
-    //     evt.preventDefault();//it stops the default behaviour like event propagation
-    // }
+        evt.preventDefault();//it stops the default behaviour like event propagation
+    }
 
     return(
         <div className="about" >  
@@ -37,13 +36,13 @@ let About = ()=>{
                 </p>
                 <p>id = {param}</p>
                 {/* <p>Sum of Params = {param + param}</p>
-                <p>Multiple of Params = {param * param}</p>
+                <p>Multiple of Params = {param * param}</p>*/}
 
                 <button className={"form-control btn btn-primary col-md-1"} 
                         onClick={onGoToHomeClick} 
                         >Go To Home</button>
 
-                <h4>{userName}</h4> */}
+                <h4>{userName}</h4>
         </div>
     )
 }

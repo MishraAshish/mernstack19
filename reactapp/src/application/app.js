@@ -25,18 +25,19 @@ export default class Application extends React.Component {
     //render - method is responsible to create virtual dom for every change of state or props
     render(){
         console.log("Render is called!! ", this.state.userName)
+        //switch - case works for router
         return(
-        <Router>
-            <Header/>
-            <Routes>
-                <Route path="/" element={<Home />}/>
-                <Route path="home" element={<Home />}/>
-                <Route path="app" element={<AppCopy />} />
-                <Route path="about" element={<About />} />
-                <Route path="about/:id" element={<About />} />
-                <Route path="*" element={<NotFound />}/>
-            </Routes>
-            <Footer/>
-        </Router>)
+            <Router>
+                <Header/>
+                    <Routes>
+                        <Route path="/" element={<Home />}/>
+                        <Route path="home" element={<Home />}/>
+                        <Route path="app" element={<AppCopy />} />
+                        <Route path="about" element={<About />} />
+                        <Route path="about/:id" element={<About />} />
+                        <Route path="*" element={<NotFound />}/>
+                    </Routes>
+                <Footer/>
+            </Router>)
     }
 }
