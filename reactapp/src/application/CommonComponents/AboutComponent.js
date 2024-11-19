@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 //a functional component using arrow function
 let About = (props)=>{
     let params = useParams(); 
-    let param = params && params["id"] ? params["id"]: "No Params"; 
+    let param = params && params["id"] ? params["id"]: 0; 
     
     //this.state = {userName : "Nilay!"}
     //this.setState({userName : "BenMa"})
@@ -35,8 +35,8 @@ let About = (props)=>{
                     we can help you get where you want to go in your career.  
                 </p>
                 <p>id = {param}</p>
-                {/* <p>Sum of Params = {param + param}</p>
-                <p>Multiple of Params = {param * param}</p>*/}
+                <p>Sum of Params = {parseInt(param) + parseInt(param)}</p>
+                <p>Multiple of Params = {parseInt(param) * parseInt(param)}</p>
 
                 <button className={"form-control btn btn-primary col-md-1"} 
                         onClick={onGoToHomeClick} 
