@@ -13,10 +13,13 @@ export default class Home extends Component {
         super(props);
 
         this.state= {
+            userName : "Default User Name",
+            address : "Default Address",
+            session : "Default MERNStack",
             firstName : "First Name",
             lastName : "Last Name",
             age : 19,
-            user : props.user // property we get from parent - app component
+            user : props.user, // property we get from parent - app component
         }
 
         this.newAddress = "Somewhere on earth!!";
@@ -24,6 +27,11 @@ export default class Home extends Component {
         this.incrementAgeLoop = null;
         this.incrementAgeVal = 17;
         //this.incrementAge();
+
+        //we can use ref keyword to make direct access of html elements and its events
+        //and once done with the udpate of values should put back the data to state
+        this.refAddress = React.createRef();
+        this.refSession = React.createRef();
     }
 
     //Creation LC - last one in creation life cycle method/hook and also called once after the render
@@ -41,17 +49,17 @@ export default class Home extends Component {
     //update life cycle methods- are called for every change of state and tracks the state and prop changes
     //shouldComponentUpdate - is used to keep a check for every state change before calling render
     //this must return true to call render method else false
-    shouldComponentUpdate(nextPops, nextState){
-        console.log("shouldComponentUpdate method is called")
-        console.log("nextPops ", nextPops)
-        console.log("nextState ", nextState)
+    // shouldComponentUpdate(nextPops, nextState){
+    //     console.log("shouldComponentUpdate method is called")
+    //     console.log("nextPops ", nextPops)
+    //     console.log("nextState ", nextState)
 
-        if (this.state.firstName == nextState.firstName ) {
-            return false // should not call render method to create virtual dom - as no change in firstName
-        } else {
-            return true // keep calling render method     
-        }
-    }
+    //     if (this.state.firstName == nextState.firstName ) {
+    //         return false // should not call render method to create virtual dom - as no change in firstName
+    //     } else {
+    //         return true // keep calling render method     
+    //     }
+    // }
 
     onclick = (evt)=>{
         console.log("Name change click is clicked")
@@ -122,6 +130,43 @@ export default class Home extends Component {
         //clearInterval(this.incrementAgeLoop)
     }
 
+    //is the event listener for any text change on the text. and reviews event object in its callback
+    onTextChange = (evt)=>{
+        //debugger;
+        let target = evt.target; //target is the html element on which event happened
+        //console.log(target)
+        let classlist = target.classList;
+        let updatedValue = target.value;
+
+        console.log(updatedValue)
+
+        if (classlist.contains("userAge")) {
+            this.setState({
+                age : updatedValue
+            })
+        } else {   
+            //update the userName state with new value so that it recreates the v-dom and renders on the page
+            this.setState({
+                userName : updatedValue
+            })
+        }
+        evt.preventDefault();
+    }
+
+    formSubmit = (evt)=>{
+        let address = this.refAddress.current.value
+        let session = this.refSession.current.value
+
+        //updating to the state again
+        this.setState({
+            address,
+            session
+        })
+
+        //prevents the default behaviour of posting to server
+        evt.preventDefault();
+    }
+
     //is used to render the html first time with creation LC, for every change of state to show the updated value
     render()
     {
@@ -129,7 +174,7 @@ export default class Home extends Component {
         return(
             <>
                 <h1>Home Component</h1>
-                <h2>
+                {/* <h2>
                 {this.state.age}
                 <hr/>
                     {this.state.firstName}
@@ -137,7 +182,47 @@ export default class Home extends Component {
                     {this.newAddress}
                 </h2>
                 <h3>{this.state.user&& this.state.user.session}</h3>
-                <button onClick={this.onclick}>Change First Name</button>
+                <button onClick={this.onclick}>Change First Name</button> */}
+
+                {/* controlled way of building a component */}
+                
+                <div className="form col-md-12">
+                     <div className="form-control">
+                         <div className="col-md-3">
+                             <b>User Name</b>
+                         </div>
+                         <div className="col-md-7">
+                             <input type="text" className="form-control textbox userName" value={this.state.userName}
+                                 placeholder="Please provide user name" onChange={this.onTextChange} maxLength={20}></input>
+                         </div>
+                         <div className="col-md-7">
+                             <input type="number" className="form-control textbox userAge" value={this.state.age}
+                             placeholder="Please provide user age" onChange={this.onTextChange} max={120}></input>
+                        </div>
+
+                         <div className="col-md-3">
+                         <button className={"form-control btn btn-primary col-md-1"} 
+                             onClick={this.onclick} 
+                         >Update Name </button>
+                         </div>
+                     </div>
+                </div>
+
+                {/* creating component in un-controlled way using ref keyword */}
+                <form className="form-control col-md-12" action="/api/loginuser" method="post" onSubmit={this.formSubmit}>
+                    <b>Address</b>
+                    <input type="text" className="form-control" placeholder={"Default User Address"} 
+                        ref={this.refAddress} maxLength={20} required></input>
+                    <b>Session</b>
+                    <input type="email" className="form-control" placeholder={"Default User Session"} 
+                        ref={this.refSession} maxLength={20} required></input>
+
+                    <button type="submit"> Save </button>
+                </form>
+
+                <label>{this.state.address}</label>
+                <hr/>
+                <label>{this.state.session}</label>
             </>
         )
     }
