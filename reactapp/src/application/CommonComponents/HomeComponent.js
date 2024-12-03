@@ -32,17 +32,23 @@ export default class Home extends Component {
         //and once done with the udpate of values should put back the data to state
         this.refAddress = React.createRef();
         this.refSession = React.createRef();
+
+        // html can't be accessed as no rendering is done yet
+        // this.refAddress.current.value = "New Address",
+        // this.refSession.current.value = "React Component"
     }
 
     //Creation LC - last one in creation life cycle method/hook and also called once after the render
     //html is rendered and we can make api call here - to do some change in state
     componentDidMount(){
         console.log("componentDidMount method is called")
-
         setTimeout(() => {
             this.setState({
                 firstName : "The changed name"
             })
+
+            this.refAddress.current.value = "New Address",
+            this.refSession.current.value = "React Component"
         }, 3000);
     }
 
@@ -195,6 +201,9 @@ export default class Home extends Component {
                              <input type="text" className="form-control textbox userName" value={this.state.userName}
                                  placeholder="Please provide user name" onChange={this.onTextChange} maxLength={20}></input>
                          </div>
+                         <div className="col-md-3">
+                             <b>User Age</b>
+                         </div>
                          <div className="col-md-7">
                              <input type="number" className="form-control textbox userAge" value={this.state.age}
                              placeholder="Please provide user age" onChange={this.onTextChange} max={120}></input>
@@ -202,14 +211,14 @@ export default class Home extends Component {
 
                          <div className="col-md-3">
                          <button className={"form-control btn btn-primary col-md-1"} 
-                             onClick={this.onclick} 
-                         >Update Name </button>
+                             onClick={this.onclick} >Update Name </button>
                          </div>
                      </div>
                 </div>
 
                 {/* creating component in un-controlled way using ref keyword */}
-                <form className="form-control col-md-12" action="/api/loginuser" method="post" onSubmit={this.formSubmit}>
+                <form className="form-control col-md-12" action="/api/loginuser" 
+                                method="post" onSubmit={this.formSubmit}>
                     <b>Address</b>
                     <input type="text" className="form-control" placeholder={"Default User Address"} 
                         ref={this.refAddress} maxLength={20} required></input>
