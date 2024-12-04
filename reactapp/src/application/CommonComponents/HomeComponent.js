@@ -55,17 +55,17 @@ export default class Home extends Component {
     //update life cycle methods- are called for every change of state and tracks the state and prop changes
     //shouldComponentUpdate - is used to keep a check for every state change before calling render
     //this must return true to call render method else false
-    // shouldComponentUpdate(nextPops, nextState){
-    //     console.log("shouldComponentUpdate method is called")
-    //     console.log("nextPops ", nextPops)
-    //     console.log("nextState ", nextState)
+    shouldComponentUpdate(nextPops, nextState){
+        console.log("shouldComponentUpdate method is called")
+        console.log("nextPops ", nextPops)
+        console.log("nextState ", nextState)
 
-    //     if (this.state.firstName == nextState.firstName ) {
-    //         return false // should not call render method to create virtual dom - as no change in firstName
-    //     } else {
-    //         return true // keep calling render method     
-    //     }
-    // }
+        if (this.state.firstName == nextState.firstName ) {
+            return false // should not call render method to create virtual dom - as no change in firstName
+        } else {
+            return true // keep calling render method     
+        }
+    }
 
     onclick = (evt)=>{
         console.log("Name change click is clicked")
@@ -169,6 +169,9 @@ export default class Home extends Component {
             session
         })
 
+        // apart from suppressing default behaviour also helps to work with 
+        // - event tunnelling
+        // - event bubbling (ripple effect)
         //prevents the default behaviour of posting to server
         evt.preventDefault();
     }
