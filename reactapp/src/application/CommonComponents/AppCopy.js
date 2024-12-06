@@ -57,6 +57,11 @@ export class AppCopy extends React.Component {
 
             <h3>{this.state.newYearWishes}</h3>
 
+            {/* <ChildComponent callBackEvent={this.changeMessageFromChild} >
+                <h2>Some html data as props</h2>
+                <h2>Some html data as props</h2>
+            </ChildComponent> */}
+
             <ChildComponent callBackEvent={this.changeMessageFromChild} />
         </>)
     }

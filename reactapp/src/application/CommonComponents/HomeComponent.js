@@ -47,8 +47,8 @@ export default class Home extends Component {
                 firstName : "The changed name"
             })
 
-            this.refAddress.current.value = "New Address",
-            this.refSession.current.value = "React Component"
+            // this.refAddress.current.value = "New Address",
+            // this.refSession.current.value = "React Component"
         }, 3000);
     }
 
@@ -80,7 +80,7 @@ export default class Home extends Component {
 
         //force update - api can be used to call render method directly, which skips shouldcomponent update method
         //not a suggested way to udpate the state unless its required to skip
-        // this.state.firstName = "Hong Bo",
+        // this.state.firstName = "Hong Bo"
         // this.forceUpdate();
 
         //console.log("After setstate called", this.state.userName)

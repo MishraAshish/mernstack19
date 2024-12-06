@@ -7,8 +7,9 @@ import { AppCopy } from "./CommonComponents/AppCopy";
 import Home from "./CommonComponents/HomeComponent";
 import About from "./CommonComponents/AboutComponent";
 import NotFound from "./CommonComponents/NotFoundComponent";
+import UserComponent from "./ApplicationComponents/User/UserComponent";
 
-export default class Application extends React.Component {
+export default class ApplicationComponent extends React.Component {
     constructor(props) {
         super(props); //is used to passback data <props -here> so that its udpated in base object for react framework
 
@@ -32,6 +33,7 @@ export default class Application extends React.Component {
                     <Routes>
                         <Route path="/" element={<Home user={this.state.user} />}/>
                         <Route path="home" element={<Home />}/>
+                        <Route path="login" element={<UserComponent />}/>
                         <Route path="app" element={<AppCopy />} />
                         <Route path="about" element={<About />} />
                         <Route path="about/:id" element={<About />} />
