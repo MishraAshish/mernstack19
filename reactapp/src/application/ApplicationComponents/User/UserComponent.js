@@ -106,6 +106,5 @@ let mapDispatchToProps = (dispatch)=>{
     }
 }
 
-
-// //connect accepts - mapStateToProps - for subscribing and mapDispatchToProps - for publishing
+//connect accepts - mapStateToProps - for subscribing and mapDispatchToProps - for publishing
 export default connect(mapStateToProps, mapDispatchToProps)(UserComponent)
