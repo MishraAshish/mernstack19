@@ -15,9 +15,13 @@ expsRouter.get('/sayhtml', function (req, res) {
   )
 })
 
-expsRouter.get('/getfile',(req, res)=>{
-    res.sendFile(__dirname+'/index.html')
-})
+// expsRouter.get('/getfile',(req, res)=>{
+//     res.sendFile(globalThis.parentDirectory+'/index.html')
+// })
+
+// expsRouter.get('/getfile2',(req, res)=>{
+//   res.sendFile(globalThis.parentDirectory+'/alert_info.js')
+// })
 
 //passing data in url - api : path
 //a. query string - ? after the end point then key value pair separated by &

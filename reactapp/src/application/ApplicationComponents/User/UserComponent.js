@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";//helps react component to connect with store
-import { AddUserToStore } from "../../State/User/UserActions";
+import { AddUserToStore, SaveUserToDBUsingAxios, SaveUserToDBUsingFetch } from "../../State/User/UserActions";
 
 class UserComponent extends Component{
 
@@ -38,8 +38,12 @@ class UserComponent extends Component{
         alert("Logged Innn -"+JSON.stringify(newUser))
 
         //upon user action to login we send user to store
-        this.props.addUser(newUser);
+        //this.props.addUser(newUser);
         
+        //this.props.saveUserToDBUsingFetch(newUser);
+
+        this.props.saveUserToDBUsingAxios(newUser);
+
         //this.props.loginUser(newUser) //will go to usercontainer => useraction => server(db) => store => userreducer
 
         evt.preventDefault();
@@ -102,6 +106,12 @@ let mapDispatchToProps = (dispatch)=>{
     return {
         addUser : (user)=>{ //action creator
             dispatch(AddUserToStore(user))
+        },
+        saveUserToDBUsingFetch : (user)=>{
+            dispatch(SaveUserToDBUsingFetch(user))
+        },
+        saveUserToDBUsingAxios : (user)=>{
+            dispatch(SaveUserToDBUsingAxios(user))
         }
     }
 }

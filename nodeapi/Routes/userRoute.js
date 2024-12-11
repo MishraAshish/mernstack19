@@ -6,7 +6,7 @@ const userDataModel = require('../DataModel/UserDataModel');
 userRouter.post("/api/signinup",(req, res)=>{
 
     let userObj = req.body; //user object passed in the body of sigininup api
-    console.log(userObj)
+    console.log("userobj", userObj)
 
     userDataModel.findOne({userName:req.body.userName}).then((existingUser)=>{
         
