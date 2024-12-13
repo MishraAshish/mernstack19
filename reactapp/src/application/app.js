@@ -10,6 +10,7 @@ import NotFound from "./CommonComponents/NotFoundComponent";
 //import UserComponent from "./ApplicationComponents/User/UserComponent.jsx"; //instead of component we are loading container
 //import UserContainer from "./ApplicationComponents/User/UserContainer";
 import UserComponent from "./ApplicationComponents/User/UserComponent";
+import UserHooks from "./ApplicationComponents/User/UserHooksComponent";
 
 export default class ApplicationComponent extends React.Component {
     constructor(props) {
@@ -36,7 +37,7 @@ export default class ApplicationComponent extends React.Component {
                         <Route path="/" element={<Home user={this.state.user} />}/>
                         <Route path="home" element={<Home />}/>
                         {/* <Route path="login" element={<UserContainer />}/> */}
-                        <Route path="login" element={<UserComponent />}/>
+                        <Route path="login" element={<UserHooks />}/>
                         <Route path="app" element={<AppCopy />} />
                         <Route path="about" element={<About />} />
                         <Route path="about/:id" element={<About />} />

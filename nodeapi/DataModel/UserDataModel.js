@@ -20,11 +20,10 @@ let userSchema = new schemaObj({
     password: {type:String, required : true},
     street: String,
     mobile: Number
+},
+{
+    versionKey: false //false - set to false then it wont create in mongodb, don't set it to true, if you want _v just dont add this
 }
-//,
-// {
-//     versionKey: false //false - set to false then it wont create in mongodb
-// }
 )
 
 let UserModel = mongooseObj.model("user", userSchema);//user - collection name, pluralised by mongodb
