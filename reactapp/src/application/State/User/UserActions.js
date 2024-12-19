@@ -17,7 +17,7 @@ export const AddUserToStore = (user)=>{
 export const SaveUserToDBUsingFetch = (userObj)=>{
     console.log("SaveUserToDBUsingFetch called")
     return (dispatch)=>{
-        window.fetch("http://localhost:9000/user/api/signinup",
+        window.fetch("http://localhost:9000/user/api/signinup", //uri - api path
             {
                 method: 'POST',
                 headers: {
