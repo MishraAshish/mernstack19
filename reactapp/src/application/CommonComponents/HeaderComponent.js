@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 let Header = (props) => {
     
-    let user = props.user;//reading from mapStateToProps which reads from userReducer.user
+    let user = props.user; //reading from mapStateToProps which reads from userReducer.user
     console.log(user)
     
     const usrName = user && user.userName ? user.userName : "";
@@ -21,9 +21,9 @@ let Header = (props) => {
             <div>
                 <NavLink to="/home"  className="button" activeclassname="true"> Home </NavLink>
                 <NavLink to="/login"  className="button" activeclassname="true"> User </NavLink>
-                <NavLink to="/app"  className="button" activeclassname="true"> AppCopy </NavLink>
+                {/* <NavLink to="/app"  className="button" activeclassname="true"> AppCopy </NavLink> */}
                 <NavLink to="/about"  className="button" activeclassname="true"> About </NavLink>
-                <NavLink to="/about/2500"  className="button" activeclassname="true"> About with Param</NavLink>
+                {/* <NavLink to="/about/2500"  className="button" activeclassname="true"> About with Param</NavLink> */}
             </div>
             <hr/>
         </>
