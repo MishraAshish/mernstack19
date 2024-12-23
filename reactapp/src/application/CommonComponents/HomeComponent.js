@@ -43,14 +43,14 @@ export default class Home extends Component {
     //html is rendered and we can make api call here - to do some change in state
     componentDidMount(){
         console.log("componentDidMount method is called")
-        setTimeout(() => {
-            this.setState({
-                firstName : "The changed name"
-            })
+        // setTimeout(() => {
+        //     this.setState({
+        //         firstName : "The changed name"
+        //     })
 
-            // this.refAddress.current.value = "New Address",
-            // this.refSession.current.value = "React Component"
-        }, 3000);
+        //     // this.refAddress.current.value = "New Address",
+        //     // this.refSession.current.value = "React Component"
+        // }, 3000);
     }
 
     //update life cycle methods- are called for every change of state and tracks the state and prop changes

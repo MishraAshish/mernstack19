@@ -2,6 +2,7 @@ const express = require('express') //import package
 const app = express() //initialzing the express application
 const defaultRoutes = require("./Routes/defaultRoute")
 const userRoutes = require("./Routes/userRoute")
+const productRoute = require("./Routes/productRoute")
 const cors = require('cors')
 
 globalThis.parentDirectory = __dirname;
@@ -9,6 +10,7 @@ globalThis.parentDirectory = __dirname;
 //we can have multiple express applications running in our single project
 const adminApp = express() //initialzing the express application
 const userApp = express()
+const productApp = express()
 //user, product, cart
 //const router = express.Router({})
 
@@ -32,6 +34,9 @@ adminApp.get("/hello",(req, res)=>{
 
 app.use("/user", userApp)
 userApp.use("/", userRoutes);//redirecting all the calls having user in it to user router
+
+app.use("/product", productApp)
+productApp.use("/", productRoute);//redirecting all the calls having product in it to product router
 
 app.use("/", defaultRoutes)
 

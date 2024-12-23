@@ -9,8 +9,9 @@ import About from "./CommonComponents/AboutComponent";
 import NotFound from "./CommonComponents/NotFoundComponent";
 //import UserComponent from "./ApplicationComponents/User/UserComponent.jsx"; //instead of component we are loading container
 //import UserContainer from "./ApplicationComponents/User/UserContainer";
-import UserComponent from "./ApplicationComponents/User/UserComponent";
+//import UserComponent from "./ApplicationComponents/User/UserComponent";
 import UserHooks from "./ApplicationComponents/User/UserHooksComponent";
+import ProductComponent from "./ApplicationComponents/Product/ProductComponent";
 
 export default class ApplicationComponent extends React.Component {
     constructor(props) {
@@ -38,7 +39,8 @@ export default class ApplicationComponent extends React.Component {
                         <Route path="home" element={<Home />}/>
                         {/* <Route path="login" element={<UserContainer />}/> */}
                         <Route path="login" element={<UserHooks />}/>
-                        <Route path="app" element={<AppCopy />} />
+                        {/* <Route path="app" element={<AppCopy />} /> */}
+                        <Route path="product" element={<ProductComponent />} />
                         <Route path="about" element={<About />} />
                         <Route path="about/:id" element={<About />} />
                         <Route path="*" element={<NotFound />}/>
