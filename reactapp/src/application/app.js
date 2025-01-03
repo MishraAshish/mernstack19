@@ -12,6 +12,7 @@ import NotFound from "./CommonComponents/NotFoundComponent";
 //import UserComponent from "./ApplicationComponents/User/UserComponent";
 import UserHooks from "./ApplicationComponents/User/UserHooksComponent";
 import ProductComponent from "./ApplicationComponents/Product/ProductComponent";
+import CartComponent from "./ApplicationComponents/Cart/CartComponent";
 
 export default class ApplicationComponent extends React.Component {
     constructor(props) {
@@ -41,6 +42,7 @@ export default class ApplicationComponent extends React.Component {
                         <Route path="login" element={<UserHooks />}/>
                         {/* <Route path="app" element={<AppCopy />} /> */}
                         <Route path="product" element={<ProductComponent />} />
+                        <Route path="cart" element={<CartComponent />} />
                         <Route path="about" element={<About />} />
                         <Route path="about/:id" element={<About />} />
                         <Route path="*" element={<NotFound />}/>
