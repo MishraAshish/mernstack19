@@ -35,7 +35,7 @@ class UserComponent extends Component{
 
     loginUser = (evt)=>{        
         let newUser = this.state;
-        alert("Logged Innn -"+JSON.stringify(newUser))
+        //alert("Logged Innn -"+JSON.stringify(newUser))
 
         //upon user action to login we send user to store
         //this.props.addUser(newUser);

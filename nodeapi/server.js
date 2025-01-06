@@ -3,6 +3,7 @@ const app = express() //initialzing the express application
 const defaultRoutes = require("./Routes/defaultRoute")
 const userRoutes = require("./Routes/userRoute")
 const productRoute = require("./Routes/productRoute")
+const cartRoute = require("./Routes/cartRoute")
 const cors = require('cors')
 
 globalThis.parentDirectory = __dirname;
@@ -11,6 +12,7 @@ globalThis.parentDirectory = __dirname;
 const adminApp = express() //initialzing the express application
 const userApp = express()
 const productApp = express()
+const cartApp = express()
 //user, product, cart
 //const router = express.Router({})
 
@@ -37,6 +39,10 @@ userApp.use("/", userRoutes);//redirecting all the calls having user in it to us
 
 app.use("/product", productApp)
 productApp.use("/", productRoute);//redirecting all the calls having product in it to product router
+
+app.use("/cart", cartApp)
+cartApp.use("/", cartRoute);
+
 
 app.use("/", defaultRoutes)
 

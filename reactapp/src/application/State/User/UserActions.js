@@ -1,6 +1,7 @@
 //defines user actions which contains action type and payload for each action creator to dispatch to store
 import * as actionTypes from "../ActionTypes";
 import axios from "axios";
+import { fetchUserCart } from "../Cart/CartAction"
 
 //action accepts payload value/object to be used in user reducer switch
 export const AddUserToStore = (user)=>{
@@ -44,6 +45,7 @@ export const SaveUserToDBUsingAxios = (userObj)=>{
             let loggedUser = collection.data
             console.log(loggedUser)
             dispatch(AddUserToStore(loggedUser))
+            dispatch(fetchUserCart(loggedUser._id))
         })
         .catch((error)=>console.log(error))
     }

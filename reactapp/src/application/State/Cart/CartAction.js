@@ -1,14 +1,14 @@
 import * as actionTypes from "../ActionTypes";
 import axios from "axios";
 
-export const saveCartForCheckout = (product)=>{
-    console.log("Product ", product);
+export const saveCartForCheckout = (cart, userid)=>{
+    console.log("cart List ", cart);
 
     return function (dispatch) {
         //dispatch(loading(true));
 
-        axios.post("http://localhost:9000/cart/api/saveCart",
-            product
+        axios.post("http://localhost:9000/cart/api/saveUserCart",
+            {cart, userid}
         )
         .then((allData)=>{
             let productresp = allData.data;
@@ -52,21 +52,25 @@ export const EmptyTheCart = ()=>{
     }
 }
 
-export const fetchUserCart = (userId)=>{
+export const fetchUserCart = (userid)=>{
     console.log("Cart ");
 
     return function (dispatch) {
         //dispatch(loading(true));
 
         axios.post("http://localhost:9000/cart/api/getusercart",
-            userId
+            {userid}
         )
         .then((allCartData)=>{
             let cartList = allCartData.data;
             console.log("get products response ", cartList);
             //dispatch(loading(false));
             //need to do this in loop
-            dispatch(AddItemToCart(cartList))
+            for (const item of cartList.cart) {
+                console.log("item in for of", item);
+                let action = dispatch(AddItemToCart(item));
+                dispatch(action);    
+            }    
         })
         .catch((err)=>{
             //dispatch(loading(false));
