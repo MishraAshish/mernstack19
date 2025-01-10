@@ -23,7 +23,7 @@ let DisplayProducts = ()=>{
                 products.map((productItem)=>{
                     return <ProductItemComponent product={productItem} key={productItem._id} />
                 })
-                : <h4>No Products To Display</h4>
+                : <div><h4>No Products To Display</h4></div>
             }
         </>
     )

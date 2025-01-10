@@ -38,7 +38,7 @@ let ProductComponent = (props) => {
     }
 
     return(
-        <>
+        <div className="col-md-12">
             <h1 className="col-md-12">Product component</h1>
 
             <form className={"form componentClass"}>
@@ -73,7 +73,7 @@ let ProductComponent = (props) => {
             </form>
             <hr/>
             <DisplayProducts />
-        </>
+        </div>
     )
 
 }
