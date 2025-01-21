@@ -1,3 +1,8 @@
+// 21-Jan-2025 - Reorder Page 
+// Reorder
+// User to reorder from recent orders or from cancelled orders
+// A Simple process just add the order to your cart and replace or merge whatever is present in cart
+
 // 15-Jan-2025 - Recentorder Page 
 // Upon MakePayment Click
 // Save the cart to RecentOrders collection (should have userid, order, dateTime)
