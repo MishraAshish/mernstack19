@@ -6,7 +6,7 @@
 // // a button - with text withdraw : upon click it should display the minimum set of denominations of notes
 // 	Create a react page like atm dispenser using hooks, it should update the denomination (Currency Notes) within functional component or
 // 	create this using react class component
-// 	Denominations are of : 1,2,5,10,20,50,100,200,500,1000,2000
+// 	Denominations are of : 1,2,5,10,20,50,100,200,500,2000
 // 	E.G. Amount 7863 -
 // 	You will get following amount
 // 	1 notes of Rs 1
