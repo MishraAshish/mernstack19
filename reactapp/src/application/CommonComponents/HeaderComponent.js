@@ -25,6 +25,7 @@ let Header = (props) => {
                 <NavLink to="/cart"  className="button" activeclassname="true"> Cart </NavLink>
                 {/* <NavLink to="/app"  className="button" activeclassname="true"> AppCopy </NavLink> */}
                 <NavLink to="/about"  className="button" activeclassname="true"> About </NavLink>
+                <NavLink to="/hook"  className="button" activeclassname="true"> Hook </NavLink>
                 {/* <NavLink to="/about/2500"  className="button" activeclassname="true"> About with Param</NavLink> */}
             </div>
             <hr/>

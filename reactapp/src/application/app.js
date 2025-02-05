@@ -13,6 +13,7 @@ import NotFound from "./CommonComponents/NotFoundComponent";
 import UserHooks from "./ApplicationComponents/User/UserHooksComponent";
 import ProductComponent from "./ApplicationComponents/Product/ProductComponent";
 import CartComponent from "./ApplicationComponents/Cart/CartComponent";
+import UnderstandingHooks from "./Hooks/UnderstandingHooks";
 
 export default class ApplicationComponent extends React.Component {
     constructor(props) {
@@ -45,6 +46,7 @@ export default class ApplicationComponent extends React.Component {
                         <Route path="cart" element={<CartComponent />} />
                         <Route path="about" element={<About />} />
                         <Route path="about/:id" element={<About />} />
+                        <Route path="hook" element={<UnderstandingHooks />} />
                         <Route path="*" element={<NotFound />}/>
                     </Routes>
                 <Footer/>
