@@ -1,19 +1,19 @@
-import React from "react";
+import React, {Suspense, lazy} from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./app.css";
-import Footer from "./CommonComponents/FooterComponent";
-import Header from "./CommonComponents/HeaderComponent";
-import { AppCopy } from "./CommonComponents/AppCopy";
-import Home from "./CommonComponents/HomeComponent";
-import About from "./CommonComponents/AboutComponent";
-import NotFound from "./CommonComponents/NotFoundComponent";
+let Footer = lazy(()=> import("./CommonComponents/FooterComponent"));
+let Header = lazy(()=> import("./CommonComponents/HeaderComponent"));
+//import { AppCopy } from "./CommonComponents/AppCopy";
+let Home = lazy(()=> import("./CommonComponents/HomeComponent"));
+let About = lazy(()=> import("./CommonComponents/AboutComponent"));
+let NotFound = lazy(()=> import( "./CommonComponents/NotFoundComponent"));
 //import UserComponent from "./ApplicationComponents/User/UserComponent.jsx"; //instead of component we are loading container
 //import UserContainer from "./ApplicationComponents/User/UserContainer";
 //import UserComponent from "./ApplicationComponents/User/UserComponent";
-import UserHooks from "./ApplicationComponents/User/UserHooksComponent";
-import ProductComponent from "./ApplicationComponents/Product/ProductComponent";
-import CartComponent from "./ApplicationComponents/Cart/CartComponent";
-import UnderstandingHooks from "./Hooks/UnderstandingHooks";
+let UserHooks = lazy(()=> import( "./ApplicationComponents/User/UserHooksComponent"));
+let ProductComponent = lazy(()=> import("./ApplicationComponents/Product/ProductComponent"));
+let CartComponent = lazy(()=> import("./ApplicationComponents/Cart/CartComponent"));
+let UnderstandingHooks = lazy(()=> import("./Hooks/UnderstandingHooks"));
 
 export default class ApplicationComponent extends React.Component {
     constructor(props) {
@@ -35,6 +35,8 @@ export default class ApplicationComponent extends React.Component {
         //switch - case works for router
         return(
             <Router>
+                <div className="topdiv">
+                <Suspense fallback={<div>Loading...</div>}>
                 <Header/>
                     <Routes>
                         <Route path="/" element={<Home user={this.state.user} />}/>
@@ -50,6 +52,8 @@ export default class ApplicationComponent extends React.Component {
                         <Route path="*" element={<NotFound />}/>
                     </Routes>
                 <Footer/>
+                </Suspense>
+                </div>
             </Router>)
     }
 }

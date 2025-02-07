@@ -1,3 +1,10 @@
+// 06-Feb-2025 - Download Order
+// Create PDF of order information
+// Save it on local or S3 bucket
+// Create a link for that order to redirect and download from aws
+// Send a mail once payment button is clicked
+
+
 // 31-Jan-2025 - Notifcations
 
 // Show notification on top of header (Right Corner)
