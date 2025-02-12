@@ -2,7 +2,7 @@ import React, {useState, useCallback, useMemo} from "react";
 import Title from "./Title";
 import Button from "./Button";
 import Count from "./Count";
-import AppToast from "./ReactToastify";
+//import AppToast from "./ReactToastify";
 
 function UnderstandingHooks() {    
     let text = "Age", text1 = "Salary";
@@ -33,14 +33,14 @@ function UnderstandingHooks() {
 
     return(
         <>
-        <AppToast />
+        {/*<AppToast />*/}
             <Title/>
 
             <Button handleClick={incrementAge} >
                 {"Increment Age"}
             </Button>
             <Count text={text} count={age} />
-            <span>{isEven ? ' Even' : ' Odd'}</span>
+            {/*<span>{isEven ? ' Even' : ' Odd'}</span>*/}
 
             {/* <span>{isEven() ? ' Even' : ' Odd'}</span> */}
             
