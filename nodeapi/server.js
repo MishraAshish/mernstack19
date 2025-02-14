@@ -43,14 +43,20 @@ productApp.use("/", productRoute);//redirecting all the calls having product in 
 app.use("/cart", cartApp)
 cartApp.use("/", cartRoute);
 
+// app.get("/", (req, res)=>{
 
-app.use("/", defaultRoutes)
+//   res.sendFile("")
 
-//star or wild card operator
+// })
+// app.use("/", defaultRoutes)
+
+// //star or wild card operator
+// app.get('*', function (req, res) {
+//   res.send('API is not ready yet')
+// })
 app.get('*', function (req, res) {
-  res.send('API is not ready yet')
+  res.sendFile(__dirname+"/Public/index.html")
 })
-
 console.log('API is listening at port 9000')
 app.listen(9000)
 
